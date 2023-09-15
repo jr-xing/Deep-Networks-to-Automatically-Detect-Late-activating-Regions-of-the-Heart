@@ -16,6 +16,8 @@ debug = False
 showtest = False
 saveResults = True
 visData = False
+loadExtractedData = True
+loadExistingConfig = True
 resultPath = '../results/'
 # resultPath = 'D:\\Research\\Cardiac\\Experiment_Results\\'
 gpuIdx = 0
@@ -270,16 +272,8 @@ for expIdx, config in enumerate(configs):
     net = NetModule(getNetwork(net_config), config['loss'], device)   
     
     #%% 5. Training
-    if config['training']['batch_size'] == 'half':
-        config['training']['batch_size'] = max(len(dataTr)//2, 10)
-    # ---------------------------------------------- #
-    # ------------ FOR ISBI PAPER ------------------ #
-    # ---------------------------------------------- #
-    # net.continueTraining = True
-    config['training']['batch_size'] = max(len(dataTr)//5, 10)
-    # config['training']['learning_rate'] = 5e-4
-    config['training']['epochs_num'] = 2000
-    loss_history, validLoss_history, past_time = net.train(training_dataset=training_dataset, training_config = config['training'], valid_dataset = test_dataset, expPath = None)
+    netFile = './temp/idx-260-strainMatSVD-AugShift-LR1.00E-04-CV3-Ch8-net-retrain-ISBI-final.pth'
+    net.load(netFile, map_location={'cuda:1': f'cuda:{gpuIdx}','cuda:2': f'cuda:{gpuIdx}','cuda:3': f'cuda:{gpuIdx}'})    
         
         
     
