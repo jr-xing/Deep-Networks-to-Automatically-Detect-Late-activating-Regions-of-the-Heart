@@ -1,0 +1,7 @@
+{
+    "inputType": {"_type":"choice", "_value": ["strainMat", "strainMatSVD"]},
+    "n_conv_layers": {"_type":"choice", "_value": [2,3,4,5]},
+    "n_conv_channels": {"_type":"choice", "_value": [4, 8, 16, 24]},
+    "learning_rate": {"_type":"choice", "_value": [1e-4, 5e-5, 1e-5, 5e-6]},
+    "aug": {"_type":"choice", "_value": [0, 11, 18]}
+}
