@@ -1,5 +1,5 @@
 # Deep Networks to Automatically Detect Late-Activating Regions of the Heart
-![nihms-1977483-f0001](https://github.com/user-attachments/assets/bd6fcc90-82b4-4378-af6c-65503c935586| width=400)
+![nihms-1977483-f0001](https://github.com/user-attachments/assets/bd6fcc90-82b4-4378-af6c-65503c935586 | width=400)
 
 This repository provides the PyTorch implementation of the paper [Deep Networks to Automatically Detect Late-activating Regions of the Heart](https://ieeexplore.ieee.org/document/9433796), which introduces a novel method for identifying late-activating regions of the left ventricle from cine Displacement Encoding with Stimulated Echo (DENSE) MR images. The proposed deep learning framework detects the Time to the Onset of circumferential Shortening (TOS) to identify late mechanical activation in heart failure patients.
 
